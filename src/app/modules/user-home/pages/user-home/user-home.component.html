@@ -1,1 +1,28 @@
-<p>user-home works!</p>
+<div class="d-flex justify-content-between gap-1 p-1 text-bg-dark">
+  <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample"
+          aria-controls="offcanvasExample">
+    Menu
+  </button>
+  <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample"
+          aria-controls="offcanvasExample">
+    Sair
+  </button>
+</div>
+
+<main>
+  <router-outlet></router-outlet>
+</main>
+
+<div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
+  <div class="offcanvas-header">
+    <h5 class="offcanvas-title" id="offcanvasExampleLabel">Menu</h5>
+    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+  </div>
+  <div class="offcanvas-body">
+    <div class="list-group" id="list-tab" role="tablist">
+      <ng-container *ngFor="let item of menuList; let i = index">
+        <a class="list-group-item list-group-item-action active" data-bs-toggle="list" aria-controls="list-home" (click)="goRoute(item)">Home</a>
+      </ng-container>
+    </div>
+  </div>
+</div>

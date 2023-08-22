@@ -7,4 +7,14 @@ import { Component } from '@angular/core';
 })
 export class UserHomeComponent {
 
+  menuList = [
+    // {
+    //   name: '',
+    //
+    // }
+  ];
+
+  goRoute(route: any) {
+
+  }
 }

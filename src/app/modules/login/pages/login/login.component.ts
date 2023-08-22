@@ -28,11 +28,17 @@ export class LoginComponent implements OnInit {
   }
 
   async startLogin() {
-    this.loadingLogin = true;
-    const formValue = this.formLogin?.getRawValue();
-    await this.login(formValue);
-    this.loadingLogin = false;
-    this.router.navigate(['user-home']);
+    try{
+      this.loadingLogin = true;
+      const formValue = this.formLogin?.getRawValue();
+      await this.login(formValue);
+      this.router.navigate(['user-home']);
+    }
+    catch(er) {
+      // this.messageService.error();
+    } finally {
+      this.loadingLogin = false;
+    }
   }
 
   async login(model: LoginModel) {
